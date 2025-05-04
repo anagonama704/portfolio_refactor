@@ -25,14 +25,9 @@ services:
       - 3344:3306
     volumes:
       - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
-      - note-db-volume:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
     environment:
       MYSQL_DATABASE: wk_portofolio
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: user
       MYSQL_PASSWORD: password
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-    command: --default-authentication-plugin=mysql_native_password
-
-volumes:
-  note-db-volume:
